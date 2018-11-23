@@ -1,0 +1,149 @@
+\documentclass{beamer}
+\usepackage{textcomp}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{beamerthemeshadow}
+
+\title[Computação Evolutiva]{O Problema da Caixa Preta} 
+\author{Mateus Fellipe Alves Lopes} 
+\institute[UNI]
+{
+UNIMONTES \\ 
+\medskip
+\textit{mateusfellipe2302@gmail.com} 
+}
+\date{23 de Fevereiro de 2017} 
+
+\begin{document}
+
+\begin{frame}
+\titlepage 
+\end{frame}
+
+\section{Introdução ao Problema}
+\begin{frame}
+\frametitle{Introdução}
+	Sabendo-se que cada botão da Caixa Preta pode ser colocado em 16 posições distintas, e que se deseja maximizar o sinal de saída, encontre a melhor combinação de posições.\\
+	
+	\begin{center}
+	\textit{$F_i= 9+b_2b_5-b_2_3b_1_4+b_2_4b_4-b_2_1b_1_0+b_3_6b_1_5-b_1_1b_2_6+b_1_6b_1_7+b_3b_3_3+b_2_8b_1_9+b_1_2b_3_4-b_3_1b_3_2-b_2_2b_2_5+b_3_5b_2_7-b_2_9b_7+b_8b_1_3-b_6b_9+b_1_8b_2_0-b_1b_3_0+b_2_3b_4+b_2_1b_1_5+b_2_6b_1_6+b_3_1b_1_2+b_2_5b_1_9+b_7b_8+b_9b_1_8+b_1b_3_3$}
+	\end{center}
+\end{frame}
+
+\section{Características escolhidas} 
+
+\begin{frame}
+\frametitle{Características escolhidas}
+\begin{itemize}
+	\item Linguagem de programação: \textbf{Python 2.7}
+	\item Cruzamento: \textbf{2 pontos de corte}
+	\item Elitismo: \textbf{30\%} dos melhores indivíduos passam para proxima geração 
+\end{itemize}
+
+\end{frame}
+
+
+\section{Seleção e Mutação}
+
+\begin{frame}
+\frametitle{Seleção e Mutação}
+	\textbf{Critério:} Média das melhores soluções (Para cada uma das repetições realizadas determina-se a qualidade da melhor solução. Esta medida é obtida efetuando a média destes valores).
+	\begin{itemize}
+		\item \textbf{Torneio X Roleta}\\
+		Resultado: A seleção por Torneio teve uma média ligeiramente maior do que a seleção por Roleta.
+		\item \textbf{Bit a Bit X 1 Bit}\\
+		Resultado: A mutação Bit a Bit teve uma média bem maior do que a mutação por 1 Bit, que na maioria das vezes ficava preso em um ótimo local.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Torneio X Roleta}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{TorneioXRoleta_barra.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Torneio X Roleta}
+\begin{figure}[!h]
+\includegraphics[width=10cm]{TorneioXRoleta.png} 
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bit a Bit X 1 Bit}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{BitBitXBit_barra.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bit a Bit X 1 Bit}
+\begin{figure}[!h]
+\includegraphics[width=9.5cm]{BitBitXBit.png} 
+\end{figure}
+\end{frame}
+
+\section{Variação Taxa de Cruzamento}
+\begin{frame}
+\frametitle{Taxa de Cruzamento 0.2}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pc_02.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxa de Cruzamento 0.5}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pc_05.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxa de Cruzamento 0.8}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pc_08.png} 
+\end{figure}
+\end{frame}
+
+\section{Variação Taxa de Mutação}
+\begin{frame}
+\frametitle{Taxa de Mutação 0.025}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pm_0025.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxa de Mutação 0.05}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pm_005.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxa de Mutação 0.1}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pm_01.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxa de Mutação 0.25}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pm_025.png} 
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxa de Mutação 0.75}
+\begin{figure}[!h]
+\includegraphics[width=9cm]{Pm_075.png} 
+\end{figure}
+\end{frame}
+
+\end{document}
